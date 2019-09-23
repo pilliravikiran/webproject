@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>data</title>
+</head>
+<body>
+	<p>Please Re-Enter your Details</p>
+<form action="{{(url_for('edit_data',register_id=register.id))}}" method="POST" enctype = "multipart/form-data">
+	<input type="text" name="name" placeholder="Enter name" value="{{register.name}}">
+	<input type="text" name="email" placeholder="Enter Email" value="{{register.email}}">
+	<input type="text" name="pwd" placeholder="Enter password" value="{{register.pwd}}">
+	<input type="text" name="des" placeholder="Enter degination" value="{{register.des}}">
+	<input type="submit" name="submit" value="Edit">
+</form>
+</body>
+</html>

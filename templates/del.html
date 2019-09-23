@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>data</title>
+</head>
+<body>
+<form action="{{(url_for('delete',register_id=register.id))}}" method="POST" enctype = "multipart/form-data">
+	<input type="text" name="name" placeholder="Enter name" value="{{register.name}}">
+	<input type="text" name="email" placeholder="Enter Email" value="{{register.email}}">
+	<input type="text" name="des" placeholder="Enter degination" value="{{register.des}}">
+	<input type="submit" name="submit" value="Delete">
+</form>
+</body>
+</html>

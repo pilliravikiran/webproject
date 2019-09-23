@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Main Page</title>
+  
+<body>
+	{% if current_user.is_authenticated%}
+
+ 
+      
+      <a href="{{url_for('logout')}}">Logout</a>
+  
+	
+		{% with messages=get_flashed_messages()%}
+		{%if messages%}
+			{%for message in messages %}
+				<h1>{{message}}</h1>
+			{%endfor%}
+		{%endif%}
+		{%endwith%}
+	</div>
+<table border=3>
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Pwd</th>
+		<th>Des</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+	{% for i in data %}
+	<tr>
+		<td>{{i.id}}</td>
+		<td>{{i.name}}</td>
+		<td>{{i.email}}</td>
+		<td>{{i.pwd}}</td>
+		<td>{{i.des}}</td>
+		<td><button><a href="{{url_for('edit_data',register_id=i.id)}}">EDIT</a></button></td>
+		<td><button><a href="{{url_for('delete',del_id=i.id)}}">DEL</a></button></td>
+	</tr>
+  
+	{%endfor%}
+</table>
+<button><a href="{{url_for('add_data')}}">Add</a></button>
+{%else%}
+
+
+     \
+    
+    
+      <li><a href="{{url_for('register_Data')}}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="{{url_for('login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></
+<h1><center>PLEASE LOG IN </center></h1>
+
+{%endif%}
+</body>
+
+</html>
